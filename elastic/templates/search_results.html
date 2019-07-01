@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="col">
+        {% for result in search_result %}
+        <h5>Название: {{ result.title }}</h5>
+        <h6>Date: {{ result.timestamp }}</h6>
+        <p>{{ result.content|truncatechars:1000 }}</p>
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+{% endblock content %}
