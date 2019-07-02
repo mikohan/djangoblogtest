@@ -24,6 +24,6 @@ from django.conf.urls import include
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', homepage, name='home'),
-    url(r'^blog/', include('blog.urls', namespace='blog')),
-    url(r'^elastic/', include('elastic.urls', namespace='elastic')),
+    url(r'^blog/', include(('blog.urls', 'blog'), namespace='blog')),
+    url(r'^elastic/', include(('elastic.urls', 'elastic'), namespace='elastic')),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
